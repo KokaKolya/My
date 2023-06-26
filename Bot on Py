@@ -1,0 +1,26 @@
+import requests
+import json
+import random
+
+def get_funny_picture():
+    response = requests.get("https://api.example.com/funny-pictures")  # Replace with actual API endpoint
+    if response.status_code == 200:
+        data = json.loads(response.text)
+        picture_url = random.choice(data["pictures"])
+        return picture_url
+    else:
+        return None
+
+# Example usage
+def send_funny_picture():
+    picture_url = get_funny_picture()
+    if picture_url:
+        response_message = f"Here's a funny picture for you: {picture_url}"
+    else:
+        response_message = "Oops! Failed to retrieve a funny picture."
+
+    # Replace this part with your actual code to send the message
+    print(response_message)
+
+# Test the function
+send_funny_picture()
