@@ -24,3 +24,9 @@ def send_funny_picture():
 
 # Test the function
 send_funny_picture()
+
+
+
+def send_funny_picture():
+    picture_url = get_funny_picture()
+    if picture_url:
